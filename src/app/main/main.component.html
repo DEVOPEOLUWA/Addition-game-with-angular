@@ -1,0 +1,119 @@
+<body>
+  <div class="background">
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <div class="container">
+      <div class="ui left floated segment">
+        <a class="ui orange right ribbon label">Game Area</a>
+        <div class="instructions">
+          <a class="item">
+            <i class="right triangle icon"></i>
+            <div class="content">
+              <div class="header">Instructions:</div>
+              <div class="description">
+                Sum up the numbers that appears, enter it into the input box
+                that shows below it and click Enter to Submit
+              </div>
+            </div>
+          </a>
+        </div>
+        <div class="numbers">
+          <div class="first">
+            <p>{{ first.toFixed(0) }}</p>
+          </div>
+          <p class="plus">+</p>
+          <p></p>
+          <div class="first">
+            <p>{{ second.toFixed(0) }}</p>
+          </div>
+        </div>
+        <form class="ui form">
+          <div class="field">
+            <input
+              #input
+              type="number"
+              placeholder="Enter your answer"
+              name="amount"
+              [(ngModel)]="amount"
+            />
+          </div>
+          <div class="buttons">
+            <button
+              (click)="getValue(input.value)"
+              (click)="function()"
+              (click)="functionTwo()"
+              class="fluid ui button"
+              [disabled]="!!!amount"
+              (click)="getValues($event, amount)"
+            >
+              Enter
+            </button>
+            <h2>{{ value }}</h2>
+          </div>
+          <button
+            (click)="functionTwo()"
+            class="ui right floated compact icon button"
+          >
+            <i class="right arrow icon"></i>
+          </button>
+        </form>
+      </div>
+      <div class="ui right floated segment">
+        <div class="checkers">
+          <p *ngIf="isShow">
+            Incorrect Answer! The correct answer is {{ fourth }}
+          </p>
+          <p *ngIf="isShowTwo">Very Good! You are absolutely Correct</p>
+        </div>
+        <a class="ui teal right ribbon label">Scoring Arena</a>
+        <div class="keys">
+          <div class="ui middle aligned animated list">
+            <div class="item">
+              <div class="ui avatar image image-1"></div>
+              <div class="content">
+                <div class="header">Correct Points</div>
+              </div>
+            </div>
+            <div class="item">
+              <div class="ui avatar image image-2"></div>
+              <div class="content">
+                <div class="header">Incorrect points</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="scored">
+          <div class="one"></div>
+
+          <div class="two"></div>
+        </div>
+        <div class="letter">
+          <div class="one">
+            {{ count }}
+          </div>
+          <div class="two">
+            {{ countTwo }}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
